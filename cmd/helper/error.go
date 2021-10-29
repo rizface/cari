@@ -1,7 +1,13 @@
 package helper
 
+import (
+	"fmt"
+	"os"
+)
+
 func PrintIfError(err error) {
 	if err != nil {
-		panic(err)
+		fmt.Println(err.Error())
+		os.Exit(0)
 	}
 }

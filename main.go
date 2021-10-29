@@ -17,22 +17,8 @@ package main
 
 import (
 	"cari/cmd"
-	"fmt"
-	net2 "net"
 )
 
 func main() {
-	defer func() {
-		err := recover()
-		if err != nil {
-			_,netOK := err.(net2.Error)
-			if netOK {
-				fmt.Println("sepertinya jaringan kamu bermasalah, coba lagi beberapa saat lagi ")
-			} else {
-				fmt.Println(err.(error).Error())
-			}
-		}
-	}()
-
 	cmd.Execute()
 }
